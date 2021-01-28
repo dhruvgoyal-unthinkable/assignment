@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="adddata">addData</string>
+    <string name="item_name">Item name</string>
+    <string name="item_price">Item price</string>
+    <string name="total">Total: </string>
+</resources>
