@@ -30,7 +30,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "version"
+
+    productFlavors{
+        basic{
+                applicationId "com.example.myapplication.basic"
+                dimension "version"
+        }
+
+        premium{
+            applicationId "com.example.myapplication.premium"
+            dimension "version"
+        }
+    }
 }
+
+
+
 
 dependencies {
     def room_version = "2.2.6"

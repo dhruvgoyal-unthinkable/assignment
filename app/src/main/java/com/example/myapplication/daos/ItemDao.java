@@ -21,4 +21,10 @@ public interface ItemDao {
 
     @Query("SELECT SUM(item_price) FROM ITEM")
     LiveData<Integer> getTotal();
+
+    @Delete
+    void deleteItem(Item item);
+
+    @Update
+    void updateItem(Item item);
 }

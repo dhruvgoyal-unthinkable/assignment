@@ -13,9 +13,9 @@ import java.util.List;
 
 public class ItemViewModel extends AndroidViewModel {
 
-    private LiveData<List<Item>> items;
-    private LiveData<Integer> total;
-    private ItemRepository itemRepository;
+    private final LiveData<List<Item>> items;
+    private final LiveData<Integer> total;
+    private final ItemRepository itemRepository;
 
     public ItemViewModel(@NonNull Application application) {
         super(application);
@@ -24,14 +24,24 @@ public class ItemViewModel extends AndroidViewModel {
         total = itemRepository.getTotal();
     }
 
-    public void insertItem(Item item){
+
+    public void deleteItem(Item item) {
+        itemRepository.deleteItem(item);
+    }
+
+    public void updateItem(Item item) {
+        itemRepository.updateItem(item);
+    }
+
+    public void insertItem(Item item) {
         itemRepository.insertItem(item);
     }
 
-    public LiveData<List<Item>> getItems(){
+    public LiveData<List<Item>> getItems() {
         return items;
     }
-    public LiveData<Integer> getTotal(){
+
+    public LiveData<Integer> getTotal() {
         return total;
     }
 }
