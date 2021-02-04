@@ -24,6 +24,9 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 import com.example.myapplication.databinding.CustomInputDialogBinding;
 import com.example.myapplication.models.Item;
 import com.example.myapplication.viewmodels.ItemViewModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 import java.util.Objects;
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
             @Override
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(binding.itemsListView);
     }
+
 
     public static void showDialog(Item item) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -103,4 +108,5 @@ public class MainActivity extends AppCompatActivity {
 
         builder.show();
     }
+
 }
